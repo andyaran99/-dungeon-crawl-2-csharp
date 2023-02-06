@@ -1,15 +1,27 @@
 ﻿using DungeonCrawl.Core;
+using DungeonCrawl.Actors.Static;
 
 namespace DungeonCrawl.Actors.Characters
 {
     public abstract class Character : Actor
     {
-        public int Health { get; private set; }
-
-        public void ApplyDamage(int damage)
+        
+        
+        protected int health;
+        protected int Health
         {
-            Health -= damage;
+            get { return health; }
+            set { health = value; }
+        }
 
+        public Character(int health)
+        {
+            Health=health;
+        }
+
+        public void ApplyDamage(int Damage)
+        {
+            Health -= Damage;
             if (Health <= 0)
             {
                 // Die
@@ -17,6 +29,11 @@ namespace DungeonCrawl.Actors.Characters
 
                 ActorManager.Singleton.DestroyActor(this);
             }
+        }
+
+        public void RestoreLife(int HP)
+        {
+            Health += HP;
         }
 
         protected abstract void OnDeath();

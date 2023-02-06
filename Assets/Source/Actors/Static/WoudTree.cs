@@ -4,13 +4,12 @@ using UnityEngine;
 using DungeonCrawl.Actors.Characters;
 using DungeonCrawl.Core;
 using Assets.Source.Core;
-
 namespace DungeonCrawl.Actors.Static
 {
-    public class Wall : Actor
+    public class WoudTree : Actor
     {
-        public override int DefaultSpriteId => 825;
-        public override string DefaultName => "Wall";
+        public override int DefaultSpriteId => 52;
+        public override string DefaultName => "Tree";
 
         public override bool OnCollision(Actor anotherActor)
         {
@@ -21,6 +20,5 @@ namespace DungeonCrawl.Actors.Static
             // All actors are passable by default
             return false;
         }
-
     }
 }

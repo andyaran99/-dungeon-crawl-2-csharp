@@ -4,10 +4,32 @@ namespace DungeonCrawl.Actors.Characters
 {
     public class Skeleton : Character
     {
+
+        public Skeleton()
+            : base(100)
+        {
+            
+        }
+
         public override bool OnCollision(Actor anotherActor)
         {
-            return true;
+            if (anotherActor is Player)
+            {
+
+                this.ApplyDamage(25);
+                Player player = (Player)anotherActor;
+                if (player.isItem)
+                {
+                    this.ApplyDamage(50);
+                }
+                player.ApplyDamage(10);
+                Debug.Log(this.Health);
+            }
+            
+            return false;
         }
+
+
 
         protected override void OnDeath()
         {

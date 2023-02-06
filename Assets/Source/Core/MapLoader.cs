@@ -38,7 +38,7 @@ namespace DungeonCrawl.Core
 
             // Set default camera size and position
             CameraController.Singleton.Size = 10;
-            CameraController.Singleton.Position = (width / 2, -height / 2);
+            CameraController.Singleton.Position = (width / 4, -height / 2);
         }
 
         private static void SpawnActor(char c, (int x, int y) position)
@@ -57,7 +57,41 @@ namespace DungeonCrawl.Core
                     break;
                 case 's':
                     ActorManager.Singleton.Spawn<Skeleton>(position);
+                    ActorManager.Singleton.Spawn<Grass>(position);
+                    break;
+                case 'i':
+                    ActorManager.Singleton.Spawn<Item_Potion>(position);
                     ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
+                case 'd':
+                    ActorManager.Singleton.Spawn<Dagger>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
+                case 'k':
+                    ActorManager.Singleton.Spawn<Key>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
+                case 'g':
+                    ActorManager.Singleton.Spawn<Door>(position);
+                    break;
+                case 'z':
+                    ActorManager.Singleton.Spawn<Zombie>(position);
+                    ActorManager.Singleton.Spawn<Grass>(position);
+                    break;
+                case 'G':
+                    ActorManager.Singleton.Spawn<Gost>(position);
+                    ActorManager.Singleton.Spawn<Grass>(position);
+                    break;
+                case 'B':
+                    ActorManager.Singleton.Spawn<Boss>(position);
+                    ActorManager.Singleton.Spawn<Floor>(position);
+                    break;
+                case '~':
+                    ActorManager.Singleton.Spawn<Grass>(position);
+                    break;
+                case 'T':
+                    ActorManager.Singleton.Spawn<WoudTree>(position);
+                    ActorManager.Singleton.Spawn<Grass>(position);
                     break;
                 case ' ':
                     break;

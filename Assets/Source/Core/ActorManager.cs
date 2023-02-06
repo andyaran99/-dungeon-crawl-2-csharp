@@ -3,6 +3,7 @@ using System.Linq;
 using DungeonCrawl.Actors;
 using UnityEngine;
 using UnityEngine.U2D;
+using DungeonCrawl.Actors.Characters;
 
 namespace DungeonCrawl.Core
 {
@@ -43,6 +44,11 @@ namespace DungeonCrawl.Core
             return _allActors.FirstOrDefault(actor => actor.Detectable && actor.Position == position);
         }
 
+        /*public (int x,int y) GetPosition(Actor actor)
+        {
+            return actor._position;
+        }*/
+
         /// <summary>
         ///     Returns actor of specific subclass present at given position (returns null if no actor is present)
         /// </summary>
@@ -53,6 +59,7 @@ namespace DungeonCrawl.Core
         {
             return _allActors.FirstOrDefault(actor => actor.Detectable && actor is T && actor.Position == position) as T;
         }
+
 
         /// <summary>
         ///     Unregisters given actor (use when killing/destroying)

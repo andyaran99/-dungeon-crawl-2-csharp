@@ -1,10 +1,13 @@
 ﻿using DungeonCrawl.Core;
 using UnityEngine;
+using Assets.Source.Core;
 
 namespace DungeonCrawl.Actors
 {
     public abstract class Actor : MonoBehaviour
     {
+
+
         public (int x, int y) Position
         {
             get => _position;
@@ -17,6 +20,7 @@ namespace DungeonCrawl.Actors
 
         private (int x, int y) _position;
         private SpriteRenderer _spriteRenderer;
+       
 
         private void Awake()
         {
@@ -27,7 +31,10 @@ namespace DungeonCrawl.Actors
 
         private void Update()
         {
-            OnUpdate(Time.deltaTime);
+            
+            (int x, int y) targetPosition = (Position.x , Position.y);
+            var actorAtTargetPosition = ActorManager.Singleton.GetActorAt(targetPosition);
+            OnUpdate(Time.deltaTime,actorAtTargetPosition);
         }
 
         public void SetSprite(int id)
@@ -37,6 +44,7 @@ namespace DungeonCrawl.Actors
 
         public void TryMove(Direction direction)
         {
+
             var vector = direction.ToVector();
             (int x, int y) targetPosition = (Position.x + vector.x, Position.y + vector.y);
 
@@ -46,16 +54,23 @@ namespace DungeonCrawl.Actors
             {
                 // No obstacle found, just move
                 Position = targetPosition;
+                UserInterface.Singleton.SetText("", UserInterface.TextPosition.BottomRight);
             }
             else
             {
                 if (actorAtTargetPosition.OnCollision(this))
                 {
-                    // Allowed to move
                     Position = targetPosition;
                 }
+                
             }
+
+            
         }
+
+        
+
+
 
         /// <summary>
         ///     Invoked whenever another actor attempts to walk on the same position
@@ -73,9 +88,10 @@ namespace DungeonCrawl.Actors
         ///     Invoked every animation frame, can be used for movement, character logic, etc
         /// </summary>
         /// <param name="deltaTime">Time (in seconds) since the last animation frame</param>
-        protected virtual void OnUpdate(float deltaTime)
+        public virtual void OnUpdate(float deltaTime,Actor actor)
         {
         }
+        
 
         /// <summary>
         ///     Can this actor be detected with ActorManager.GetActorAt()? Should be false for purely cosmetic actors

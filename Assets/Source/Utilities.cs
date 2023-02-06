@@ -28,5 +28,28 @@ namespace DungeonCrawl
                     throw new ArgumentOutOfRangeException(nameof(dir), dir, null);
             }
         }
+
+        public static int PickRandomNumber(int min, int max)
+        {
+            Random random = new Random();
+            return random.Next(min, max);
+        }
+
+        public static Direction PickDirection()
+        {
+            var faceDirection = Direction.Up;
+            var direction = faceDirection;
+            
+            if ((int)direction == 3)
+            {
+                faceDirection = Direction.Up;
+                return faceDirection;
+            }
+            else
+            {
+                faceDirection = (Direction)((int)direction + 1);
+                return faceDirection;
+            }
+        }
     }
 }
