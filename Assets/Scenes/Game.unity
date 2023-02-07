@@ -564,25 +564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 883cc7482ac349bd9d610b5b4f30f215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPaused: 0
-  items: []
-  itemNumber: 
-  slots:
-  - {fileID: 801890689}
-  - {fileID: 1952187937}
-  - {fileID: 534035553}
-  - {fileID: 362774648}
-  - {fileID: 2000270596}
-  - {fileID: 1800719093}
-  - {fileID: 838236460}
-  - {fileID: 696240084}
-  - {fileID: 1325528942}
-  - {fileID: 972027406}
-  - {fileID: 1395724094}
-  - {fileID: 1472736249}
-  - {fileID: 1363549754}
-  - {fileID: 778260187}
-  - {fileID: 1719933753}
 --- !u!1 &362774648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,13 +3461,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237655060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 883cc7482ac349bd9d610b5b4f30f215, type: 3}
+  m_Script: {fileID: 11500000, guid: 915969e68b3c4f545aad8e5b78a2408f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPaused: 0
-  items:
-  - {fileID: 0}
-  itemNumber: 00000000
   slots:
   - {fileID: 801890689}
   - {fileID: 1952187937}
@@ -5286,7 +5263,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952187937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5508,6 +5485,7 @@ GameObject:
   - component: {fileID: 2001040139}
   - component: {fileID: 2001040141}
   - component: {fileID: 2001040140}
+  - component: {fileID: 2001040142}
   m_Layer: 5
   m_Name: Inventory_Backround_Image
   m_TagString: Untagged
@@ -5575,6 +5553,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2001040138}
   m_CullTransparentMesh: 1
+--- !u!114 &2001040142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001040138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915969e68b3c4f545aad8e5b78a2408f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slots:
+  - {fileID: 993167191}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
+  - {fileID: 2001040138}
 --- !u!1 &2100047227
 GameObject:
   m_ObjectHideFlags: 0

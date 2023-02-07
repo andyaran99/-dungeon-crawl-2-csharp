@@ -30,7 +30,7 @@ namespace Assets.Source.Core
 
         private TextMeshProUGUI[] _textComponents;
         public GameObject inventoryMenu;
-        private DungeonCrawl.Core.GameManager gameManager = new DungeonCrawl.Core.GameManager();
+        
 
         private void Start()
         {
@@ -46,7 +46,7 @@ namespace Assets.Source.Core
         {
             if (Input.GetKeyDown(KeyCode.I))
             {
-                if (gameManager.isPaused)
+                if (Inventory.Singleton.isPaused)
                 {
                     Resume();
                 }
@@ -61,14 +61,14 @@ namespace Assets.Source.Core
         {
             inventoryMenu.gameObject.SetActive(true);
             Time.timeScale = 0.0f;
-            gameManager.isPaused = true;
+            Inventory.Singleton.isPaused = true;
         }
 
         public void Resume()
         {
             inventoryMenu.gameObject.SetActive(false);
             Time.timeScale = 1.0f;
-            gameManager.isPaused = false;
+            Inventory.Singleton.isPaused = false;
         }
 
         private void Awake()
@@ -80,6 +80,7 @@ namespace Assets.Source.Core
             }
             
             Singleton = this;
+            
 
             _textComponents = GetComponentsInChildren<TextMeshProUGUI>();
         }
@@ -93,5 +94,13 @@ namespace Assets.Source.Core
         {
             _textComponents[(int) textPosition].text = text;
         }
+
+
+
+
+
+
+
+
     }
 }

@@ -17,13 +17,13 @@ namespace DungeonCrawl.Actors.Static
         {
             if (Input.GetKeyDown(KeyCode.E) && OnCollision(actor))
             {
-                DungeonCrawl.Core.GameManager.Singleton.AddItem(this);
+                DungeonCrawl.Core.Inventory.Singleton.AddItem(this);
                 UserInterface.Singleton.SetText("Item is inventory!", UserInterface.TextPosition.BottomRight);
                 SetSprite(0);
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
-                DungeonCrawl.Core.GameManager.Singleton.RemoveItem(this);
+                DungeonCrawl.Core.Inventory.Singleton.RemoveItem(this);
             }
 
 

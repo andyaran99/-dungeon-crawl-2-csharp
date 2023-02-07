@@ -17,14 +17,14 @@ namespace DungeonCrawl.Actors.Static
         public override bool OnCollision(Actor anotherActor)
         {
 
-            if (anotherActor is Player && DungeonCrawl.Core.GameManager.Singleton.CkeckIfKey())
+            if (anotherActor is Player && DungeonCrawl.Core.Inventory.Singleton.CkeckIfKey())
             {
                 UserInterface.Singleton.SetText("Press E to pick up", UserInterface.TextPosition.BottomRight);
                 SetSprite(147);
-                key = DungeonCrawl.Core.GameManager.Singleton.ReturnKey();
+                key = DungeonCrawl.Core.Inventory.Singleton.ReturnKey();
                 if (!isOpened)
                 {
-                    DungeonCrawl.Core.GameManager.Singleton.RemoveItem(key);
+                    DungeonCrawl.Core.Inventory.Singleton.RemoveItem(key);
                     CameraController.Singleton.Position = (30, -10);
                 }
                 

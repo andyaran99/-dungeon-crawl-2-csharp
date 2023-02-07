@@ -26,7 +26,7 @@ namespace DungeonCrawl.Actors.Static
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                DungeonCrawl.Core.GameManager.Singleton.RemoveItem(this);
+                DungeonCrawl.Core.Inventory.Singleton.RemoveItem(this);
             }
         }
 
