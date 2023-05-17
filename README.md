@@ -68,7 +68,8 @@ Create a more sophisticated movement AI.
 
 
 ## Game Controlls
--Movement: W, A, S, D;
+
+-Movement: W, A, S, D
 -Pick up Items: E
 -Open Inventory: I
 -Save Game: K
