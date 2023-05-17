@@ -48,7 +48,7 @@ Make the hero able to attack monsters by moving into them.
 7. Doors and keys
 Create doors in the dungeon that are opened using keys.
 
-8.Different monsters
+8. Different monsters
 Create three different monster types with different behaviors.
 
 9. Better movement AI
@@ -68,11 +68,11 @@ Create a more sophisticated movement AI.
 
 
 ## Game Controlls
-Movement: W, A, S, D;
-Pick up Items: E
-Open Inventory: I
-Save Game: K
-Load Game: L
+-Movement: W, A, S, D;
+-Pick up Items: E
+-Open Inventory: I
+-Save Game: K
+-Load Game: L
 
 Hint: Save and Load To eliminate tough monsters
 
