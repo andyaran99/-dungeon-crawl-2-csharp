@@ -69,11 +69,11 @@ Create a more sophisticated movement AI.
 
 ## Game Controlls
 
--Movement: W, A, S, D
--Pick up Items: E
--Open Inventory: I
--Save Game: K
--Load Game: L
+1. Movement: W, A, S, D
+2. Pick up Items: E
+3. Open Inventory: I
+4. Save Game: K
+5. Load Game: L
 
 Hint: Save and Load To eliminate tough monsters
 
